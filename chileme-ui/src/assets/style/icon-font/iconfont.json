@@ -1,0 +1,58 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1533391",
+      "name": "crowd",
+      "font_class": "crowd",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
+      "icon_id": "3587870",
+      "name": "辅助",
+      "font_class": "fuzhu",
+      "unicode": "e6da",
+      "unicode_decimal": 59098
+    },
+    {
+      "icon_id": "4358793",
+      "name": "换",
+      "font_class": "huan",
+      "unicode": "e6f6",
+      "unicode_decimal": 59126
+    },
+    {
+      "icon_id": "5252790",
+      "name": "库存",
+      "font_class": "kucun",
+      "unicode": "e50e",
+      "unicode_decimal": 58638
+    },
+    {
+      "icon_id": "10043737",
+      "name": "报表",
+      "font_class": "ic_normal_baobiao",
+      "unicode": "e683",
+      "unicode_decimal": 59011
+    },
+    {
+      "icon_id": "10452231",
+      "name": "qian",
+      "font_class": "qian",
+      "unicode": "e689",
+      "unicode_decimal": 59017
+    },
+    {
+      "icon_id": "11820724",
+      "name": "退出",
+      "font_class": "power",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    }
+  ]
+}
