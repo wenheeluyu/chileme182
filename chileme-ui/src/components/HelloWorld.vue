@@ -1,8 +1,6 @@
 <template lang='pug'>
-  div .hello
-    h1{{ msg }}
-    
-  </div>
+  div.hello
+    h1 {{ msg }}
 </template>
 
 <script>
