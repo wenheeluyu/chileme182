@@ -66,8 +66,7 @@ export default {
         },
         //立即注册
         jumplogin(){
-            alert('跳转登录页')
-            //this.$router.push()
+            this.$router.push('/login')
         }
     }
 }
