@@ -1,21 +1,20 @@
 <template lang="pug">
     div.register
         div.registerBox
-            div.icon.el-icon-food
-            el-form(:model="form" :rules="rules" ref="Form" label-width="100px")
+            div.icon.el-icon-food 
+            el-form(:model="form",:rules="rules",ref="Form",label-width="100px")
                 el-form-item(label="用户名" prop="username")
                     el-input(v-model="form.username")
-                el-form-item(label="密码" prop="possword")
-                    el-input(type='possword' v-model="form.possword")
+                el-form-item(label="密码" prop="password")
+                    el-input(type='password' v-model="form.password")  
                 el-form-item(label="确认密码" prop="cfm")
-                    el-input(type='possword' v-model="form.cfm")
+                    el-input(type='password' v-model="form.cfm")
                 el-form-item(label="手机号" prop="moblie")
-                    el-input(v-model="form.moblie")
+                    el-input(v-model="form.moblie")           
                 el-form-item
                     el-button(type="primary" @click="registerHandle('Form')") 立即注册
                     el-button(@click="resetHandle('Form')") 重置
             el-link(@click='jumpLogin') 点击登录   
-            
 </template>
 <script>
 export default {
@@ -23,7 +22,7 @@ export default {
         return{
             form:{
                 username:'',
-                psssword:'',
+                password:'',
                 cfm:'',
                 moblie:''
             },
@@ -33,7 +32,7 @@ export default {
                     { required: true, message: '请输入用户名称', trigger: 'blur' },
                     // { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
                 ],
-                 psssword:[
+                 password:[
                     { required: true, message: '请输入密码', trigger: 'blur' },
                     // { min: 6, max: 20, message: '长度在 6 到 20 个字符', trigger: 'blur' }
                 ],
