@@ -1,7 +1,7 @@
 <template lang="pug">
     div.login
         div.loginBox
-            div.icon.el-icon-hot-water
+            div.icon.el-icon-food 
             el-form(:model="form",ref="Form",label-width="100px")
                 el-form-item(label="用户名" prop="username")
                     el-input(v-model="form.username")
@@ -20,15 +20,57 @@ export default {
                 username:'',
                 password:''
             }
-           
         }
     },
     methods:{
         loginHandle(){
-            alert('登录')
+            if(!this.form.username){
+                this.$notify({
+                    title: '提示',
+                    message: '请输入正确的用户名',
+                    duration: 0
+                });
+                return false
+            }
+            if(!this.form.password||this.form.password.length<6||this.form.password.length>20){
+                this.$notify({
+                    title: '提示',
+                    message: '请输入正确的密码',
+                    duration: 0
+                });
+                return false
+            }
+            this.Axios({ 
+                method: 'post',
+                url: '/api/user/login',
+                data: {
+                    username: this.form.username,
+                    password: this.form.password,
+                },
+                withCredentials:true, // 发送携带证书的请求
+            }).then(data =>{
+                console.log(data)
+                if(data.data.flag){ //登陆成功
+                    this.$router.push('/')
+                }else{ // 登陆失败
+                    this.$notify({
+                        title: '提示',
+                        message: data.data.msg,
+                        duration: 0
+                    });
+                }
+            }).catch(err => {
+                 this.$notify({
+                    title: '提示',
+                    message: '登录失败请稍后再试',
+                    duration: 0
+                });
+                console.log(err)
+            })
+           
         },
         resetHandle(formName){
-            this.$refs[formName].resetFields();
+            this.$refs[formName].resetFields()
         },
         jumpRegister(){
             this.$router.push('/register')
