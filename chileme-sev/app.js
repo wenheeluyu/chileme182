@@ -5,11 +5,11 @@ const mongoose = require('mongoose') //引入mongoose
 const KoaBody = require('koa-body') //解析post请求
 const router = require('./router/router') // 引入路由(接口)
 // 配置跨域 
-const KoaCors = require('koa-cors') //引入跨域模块
-app.use(KoaCors({
-    credentials:true,
-    origin:'http://127.0.0.1:8080'
-}))  //配置跨域模块
+// const KoaCors = require('koa-cors') //引入跨域模块
+// app.use(KoaCors({
+//     credentials:true,
+//     origin:'http://127.0.0.1:8080'
+// }))  //配置跨域模块
 
 // 配置数据库链接
 mongoose.connect(cfg.path)
