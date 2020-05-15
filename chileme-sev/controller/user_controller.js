@@ -116,14 +116,14 @@ const login = async ctx => {
                 code:200,
                 flag: true,
                 type:'success',
-                msg:'登录成功'
+                msg:'登录 成功'
             }
         }else{ // 登陆失败
             ctx.body = {
                 code:200,
                 flag: false,
                 type:'error',
-                msg:'登录密码错误'
+                msg:'登录密码 错误'
             }
         }
     }else{
