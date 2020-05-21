@@ -62,9 +62,18 @@ export default {
             
         }
     },
+    mounted(){
+        this.getFoodsData()
+        this.getCartsData()
+        this.getOrderData()
+    },
+    methods{
+        addToCa
+    }
     components:{
         Carts,Order
     }
+    
 }
 </script>
 <style lang="scss" scoped>
