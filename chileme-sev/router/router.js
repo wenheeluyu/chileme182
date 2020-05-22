@@ -2,6 +2,7 @@
 const Router = require('koa-router') // 引入koa-router
 const User = require('../controller/user_controller')
 const Goods = require('../controller/goods_controller')
+const Carts=require('../controller/carts_controller')
 // 2.对koa-router 进行实例化
 const router = new Router()  // 对路由进行实例化
 // 3.定义接口
