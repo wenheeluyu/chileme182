@@ -13,4 +13,4 @@ const user = new Schema({
     lastUpdate: Number
 
 })
-module.exports = mongoose.model('User', 'user')
+module.exports = mongoose.model('User', user)

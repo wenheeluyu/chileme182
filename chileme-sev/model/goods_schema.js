@@ -18,4 +18,4 @@ const goods = new Schema({
     material: Array,
     tast: String,
 })
-module.exports = mongoose.model('Goods', 'goods')
+module.exports = mongoose.model('Goods', goods)
