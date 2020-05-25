@@ -8,26 +8,47 @@ Vue.use(VueRouter)
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    children:[
+      // 库存管理
+      {
+        path:'/stockManagement',
+        name:'StockManagement',
+        component: () => import('../views/StockManagement.vue')
+      },
+      // 商品页
+      {
+        path:'/goods',
+        name:'Goods',
+        component: () => import('../views/Goods.vue')
+      },
+      {
+        path:'/lifeCycle',
+        name:'LifeCycle',
+        component: () => import('../views/LifeCycle.vue')
+      }
+    ]
   },
-  
   // 注册
   {
     path:'/register',
     name:'Register',
     component: () => import('../views/Register.vue')
   },
-  //登录
+  // 登录
   {
     path:'/login',
     name:'Login',
     component: () => import('../views/Login.vue')
   },
+
   {
     path:'/test',
     name:'Test',
     component: () => import('../views/Test.vue')
   },
+  
+
 ]
 
 const router = new VueRouter({

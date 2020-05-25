@@ -14,6 +14,10 @@
         <div>{{ val6[2] }}</div>
         <div v-for="i in val6" :key='i'>{{ i }}</div>
 
+        <div @click=" sendGetRequest">GET</div>
+        <div @click=" sendpostRequest">POST</div>
+
+
     </div>
 </template>
 <script>
@@ -53,11 +57,28 @@ export default {
         fn3(){
             alert('fn3')
         },
-        sendRequest(){
+        sendGetRequest(){
+            this.Axios({
+                method:'GET',  //请求方式 GET POST PUT DELETE
+                url:'/api/carts/queryCartsData',    //请求的接口地址
+                Params:{
+                    name:'a',
+                    age:10
+                },  //请求携带的参数
+            }).then(res=>{
+                console.log(res)
+            }).catch(err=>{
+                console.log(err)
+            })
+        },
+        sendpostRequest(){
             this.Axios({
                 method:'POST',  //请求方式 GET POST PUT DELETE
                 url:'/api/carts/addGoods',    //请求的接口地址
-                data:{},       //请求携带的参数
+                data:{
+                    name:'a',
+                    age:10
+                },       //请求携带的参数
             }).then(res=>{
                 console.log(res)
             }).catch(err=>{
